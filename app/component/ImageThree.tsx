@@ -13,23 +13,13 @@ function ImageThree() {
     const y = useParallax(scrollYProgress, 300)
 
     return (
-        <section id='3' className="img-container">
-            <div ref={ref}>
-  <motion.img
-      src="/3.png" 
-      alt="My Image"
-      className="w-full max-w-md mx-auto"
-      initial={{ opacity: 0, y: -70 }}         
+        <section id='3' className="img-container bg-red-500">
+            <motion.div       initial={{ opacity: 0, y: -70 }}         
       whileInView={{ opacity: 1, y: 0 }}       
       transition={{ duration: 2, ease: 'easeOut' }}
-      viewport={{ once: true, amount: 0.3 }}
-    />            </div>
-            <motion.h2
-                initial={{ visibility: "hidden" }}
-                animate={{ visibility: "visible" }}
-                style={{ y }}
-            >
-            </motion.h2>
+      viewport={{ once: true, amount: 0.3 }} ref={ref}>
+                <img src="/3.png" alt="My Image" className="w-full bg-red-500 max-w-md mx-auto"/>
+            </motion.div>
         </section>
     )
 }

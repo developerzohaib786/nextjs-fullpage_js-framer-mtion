@@ -13,23 +13,13 @@ function ImageFour() {
     const y = useParallax(scrollYProgress, 300)
 
     return (
-        <section id='4' className="img-container">
-            <div ref={ref}>
-  <motion.img
-      src="/4.png" 
-      alt="My Image"
-      className="w-full max-w-md mx-auto"
-      initial={{ opacity: 0, y: -70 }}         
+        <section id='4' className="img-container bg-blue-200">
+            <motion.div initial={{ opacity: 0, y: -70 }}         
       whileInView={{ opacity: 1, y: 0 }}       
       transition={{ duration: 2, ease: 'easeOut' }}
-      viewport={{ once: true, amount: 0.3 }}
-    />            </div>
-            <motion.h2
-                initial={{ visibility: "hidden" }}
-                animate={{ visibility: "visible" }}
-                style={{ y }}
-            >
-            </motion.h2>
+      viewport={{ once: true, amount: 0.3 }} ref={ref} className="bg-blue-200">
+  <img src="/4.png" alt="My Image" className="w-full max-w-md bg-blue-200 mx-auto"    />            
+    </motion.div>
         </section>
     )
 }

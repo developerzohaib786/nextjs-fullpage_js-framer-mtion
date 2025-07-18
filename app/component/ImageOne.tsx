@@ -13,23 +13,13 @@ function ImageOne() {
     const y = useParallax(scrollYProgress, 300)
 
     return (
-        <section id='1' className="img-container">
-            <div ref={ref}>
-  <motion.img
-      src="/1.png" 
-      alt="My Image"
-      className="w-full max-w-md mx-auto"
-      initial={{ opacity: 0, y: -70 }}         
+        <section id='1' className="img-container bg-green-300">
+            <motion.div ref={ref}  initial={{ opacity: 0, y: -70 }}         
       whileInView={{ opacity: 1, y: 0 }}       
       transition={{ duration: 2, ease: 'easeOut' }}
-      viewport={{ once: true, amount: 0.3 }}
-    />            </div>
-            <motion.h2
-                initial={{ visibility: "hidden" }}
-                animate={{ visibility: "visible" }}
-                style={{ y }}
-            >
-            </motion.h2>
+      viewport={{ once: true, amount: 0.3 }}>
+  <img   src="/1.png" alt="My Image" className="w-full bg-green-300 max-w-md mx-auto" />
+              </motion.div>
         </section>
     )
 }
